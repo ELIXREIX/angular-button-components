@@ -4,6 +4,15 @@ button {
   border-radius: 8px !important;
 }
 
+/* Icon spacing and sizing */
+button .gap-2 {
+  gap: 0.5rem !important;
+}
+
+button tabler-icon {
+  flex-shrink: 0;
+}
+
 .mail-button {
   border-color: #7E55D3 !important;
   color: #7E55D3 !important;
