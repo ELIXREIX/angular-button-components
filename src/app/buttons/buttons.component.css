@@ -1,3 +1,9 @@
+/* Global button styles */
+button {
+  border-width: 2px !important;
+  border-radius: 8px !important;
+}
+
 .mail-button {
   border-color: #7E55D3 !important;
   color: #7E55D3 !important;
