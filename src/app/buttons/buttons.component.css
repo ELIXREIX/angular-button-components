@@ -1,0 +1,8 @@
+.mail-button {
+  border-color: #7E55D3 !important;
+  color: #7E55D3 !important;
+}
+
+.mail-button:hover {
+  background-color: #f3f0ff !important;
+}
