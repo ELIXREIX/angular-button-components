@@ -1,0 +1,172 @@
+<div class="p-8 bg-gray-100 min-h-screen">
+  <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">ปุ่มและสี (Button and Color)</h1>
+  
+  <!-- Color Guide -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    
+    <!-- สีน้ำเงิน -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-blue-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีน้ำเงิน - #046DE0</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักในการทำงาน ฯ เป็น "ยืนยัน" "เพิ่มข้อมูล" การทำงานหลักในเว็บไซต์ ฯ</p>
+    </div>
+
+    <!-- สีเขียว -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-green-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีเขียว - #30BE82</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักในการสถานะ "ยืนยัน" หรือ "สำเร็จ" ในการทำงาน สำเร็จ (เป็นไปในทิศทาง)</p>
+    </div>
+
+    <!-- สีม่วง -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-purple-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีม่วง - #7E55D3</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักในบางการอ่านอหารทำงานหรือใช้กับมาตุลมวิเดโอส่วนอื่น "การประมวลผล" หรือ สีที่ประมวลของการ แก้ไขเพื่อส่องคืนอื่นครึ่ง</p>
+    </div>
+
+    <!-- สีแดง -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-red-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีแดง - #F45B69</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักสำหรับ "ยกเลิก" "ปฏิเสธ" "ลบ" หรือ "ไม่สำเร็จ" (เป็นไปในทิศทางที่ไม่ดี)</p>
+    </div>
+
+    <!-- สีหลือง -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-yellow-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีหลือง #FEB85B</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักสำหรับ เช่น "รอการอนุมัติ" หรือ "รอการดำเนินการ" รายการชนายการรั้องกับการดำเนินการไม่ป่าช หรือ "ยึดหลัก" การ จังหวะ หรือ "ส่องหลัก"</p>
+    </div>
+
+    <!-- สีส้ม -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-center mb-4">
+        <div class="w-6 h-6 bg-orange-500 rounded mr-3"></div>
+        <h3 class="text-lg font-semibold">สีส้ม - #1E88E5</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">ใช้เป็นสีหลักสำหรับสวนค่อมกรอมหารให้คำวามได้คาม หรือสีพ้อสีเอือน</p>
+    </div>
+  </div>
+
+  <!-- Button Examples -->
+  <div class="bg-white rounded-lg shadow-md p-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">ตัวอย่างปุ่ม</h2>
+    
+    <div class="grid grid-cols-2 gap-8">
+      <!-- Default State -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Default</h3>
+        <div class="space-y-3">
+          <!-- Back Button -->
+          <button class="px-4 py-2 bg-transparent border border-gray-600 text-gray-700 rounded-md hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="ArrowLeft" class="w-4 h-4"></lucide-icon>
+            Back
+          </button>
+
+          <!-- Search Button -->
+          <button class="px-6 py-2 bg-blue-500 border border-transparent text-white rounded-md hover:bg-blue-600 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Search" class="w-4 h-4"></lucide-icon>
+            Search
+          </button>
+
+          <!-- Clear All Button -->
+          <button class="px-6 py-2 bg-white border border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Eraser" class="w-4 h-4"></lucide-icon>
+            Clear All
+          </button>
+
+          <!-- Add Data Button -->
+          <button class="px-6 py-2 bg-white border border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Plus" class="w-4 h-4"></lucide-icon>
+            Add Data
+          </button>
+
+          <!-- Delete Data Button -->
+          <button class="px-6 py-2 bg-white border border-red-500 text-red-500 rounded-md hover:bg-red-50 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Trash2" class="w-4 h-4"></lucide-icon>
+            Delete Data
+          </button>
+
+          <!-- Save Data Button -->
+          <button class="px-6 py-2 bg-green-500 border border-transparent text-white rounded-md hover:bg-green-600 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Save" class="w-4 h-4"></lucide-icon>
+            Save Data
+          </button>
+
+          <!-- Cancel Button -->
+          <button class="px-6 py-2 bg-white border border-gray-600 text-red-500 rounded-md hover:bg-gray-50 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="X" class="w-4 h-4"></lucide-icon>
+            Cancel
+          </button>
+
+          <!-- Return Button -->
+          <button class="px-6 py-2 bg-yellow-500 border border-transparent text-white rounded-md hover:bg-yellow-600 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Redo2" class="w-4 h-4"></lucide-icon>
+            Return
+          </button>
+
+          <!-- Approve Button -->
+          <button class="px-6 py-2 bg-green-500 border border-transparent text-white rounded-md hover:bg-green-600 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="CircleCheckBig" class="w-4 h-4"></lucide-icon>
+            Approve
+          </button>
+
+          <!-- Not Approve Button -->
+          <button class="px-6 py-2 bg-white border border-red-500 text-red-500 rounded-md hover:bg-red-50 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="X" class="w-4 h-4"></lucide-icon>
+            Not Approve
+          </button>
+
+          <!-- Export Button -->
+          <button class="px-6 py-2 bg-purple-500 border border-transparent text-white rounded-md hover:bg-purple-600 transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="FileDown" class="w-4 h-4"></lucide-icon>
+            Export
+          </button>
+
+          <!-- Mail Button -->
+          <button class="px-6 py-2 bg-white border border-purple-600 text-purple-600 rounded-md hover:bg-purple-50 transition-colors duration-200 flex items-center gap-2 mail-button">
+            <lucide-icon [img]="Mail" class="w-4 h-4"></lucide-icon>
+            ส่งจดหมาย
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Hover State -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Hover</h3>
+        <div class="space-y-3">
+          <!-- Back Button Hover -->
+          <button class="px-4 py-2 bg-gray-600 border border-transparent text-white rounded-md transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="ArrowLeft" class="w-4 h-4"></lucide-icon>
+            Back
+          </button>
+
+          <!-- Add Data Button Hover -->
+          <button class="px-6 py-2 bg-blue-600 border border-transparent text-white rounded-md transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Plus" class="w-4 h-4"></lucide-icon>
+            Add Data
+          </button>
+
+          <!-- Delete Data Button Hover -->
+          <button class="px-6 py-2 bg-red-600 border border-transparent text-white rounded-md transition-colors duration-200 flex items-center gap-2">
+            <lucide-icon [img]="Trash2" class="w-4 h-4"></lucide-icon>
+            Delete Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
