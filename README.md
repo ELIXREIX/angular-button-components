@@ -157,24 +157,35 @@ ng serve
 - `@angular/cli`: ^18.0.0
 - `typescript`: ~5.4.0
 
-## 🎯 Button Types
+## 🎯 Button Types & Color Mapping
 
-The component showcase includes 12 different button types with both Default and Hover states:
+The component showcase includes 12 different button types with both Default and Hover states, using custom colors that match Thai color guide:
 
-### Available Buttons
+### Available Buttons with Custom Colors
 
-1. **Back Button** - Navigation with arrow-left icon
-2. **Search Button** - Primary action with search icon  
-3. **Clear All Button** - Secondary action with eraser icon
-4. **Add Data Button** - Creation action with plus icon
-5. **Delete Data Button** - Destructive action with trash icon
-6. **Save Data Button** - Success action with device-floppy icon
-7. **Cancel Button** - Secondary action with x icon
-8. **Return Button** - Warning action with arrow-back-up icon
-9. **Approve Button** - Success action with circle-check icon
-10. **Not Approve Button** - Destructive action with x icon
-11. **Export Button** - Primary action with download icon
-12. **Send Email Button** - Custom purple with mail icon
+1. **Back Button** - Navigation (Gray) with arrow-left icon
+2. **Search Button** - สีน้ำเงิน (#046DE0) with search icon - Primary working color
+3. **Clear All Button** - สีน้ำเงิน outline (#046DE0) with eraser icon - Confirm action
+4. **Add Data Button** - สีน้ำเงิน outline (#046DE0) with plus icon - Add data action
+5. **Delete Data Button** - สีแดง outline (#F45B69) with trash icon - Destructive action
+6. **Save Data Button** - สีเขียว (#30BE82) with device-floppy icon - Success action
+7. **Cancel Button** - สีแดง outline (#F45B69) with x icon - Cancel/reject action
+8. **Return Button** - สีเหลือง (#FEB85B) with arrow-back-up icon - Pending status
+9. **Approve Button** - สีเขียว (#30BE82) with circle-check icon - Success confirmation
+10. **Not Approve Button** - สีแดง outline (#F45B69) with x icon - Rejection action
+11. **Export Button** - สีม่วง (#7E55D3) with download icon - Processing action
+12. **Send Email Button** - สีม่วง outline (#7E55D3) with mail icon - Special feature
+
+### Color Usage Guidelines
+
+| Color | Hex Code | Usage | Button Examples |
+|-------|----------|-------|-----------------|
+| สีน้ำเงิน | #046DE0 | Main working actions | Search, Clear All, Add Data |
+| สีเขียว | #30BE82 | Success/approval actions | Save Data, Approve |
+| สีแดง | #F45B69 | Destructive/rejection actions | Delete, Cancel, Not Approve |
+| สีเหลือง | #FEB85B | Pending/waiting actions | Return |
+| สีม่วง | #7E55D3 | Processing/special actions | Export, Send Email |
+| สีเทา | #6B7280 | Navigation/secondary actions | Back |
 
 ## 🔧 Technical Implementation
 
@@ -213,11 +224,37 @@ export class TablerIconService {
 export class TablerIconComponent { }
 ```
 
-### Usage Example
+### Usage Examples with Custom Colors
+
+**Primary Action Button (สีน้ำเงิน):**
 ```html
-<button class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 flex items-center gap-2">
+<button class="px-6 py-2 text-white rounded-lg transition-colors duration-200 flex items-center gap-2 btn-blue-custom">
   <tabler-icon name="search" class="w-4 h-4"></tabler-icon>
   Search
+</button>
+```
+
+**Success Action Button (สีเขียว):**
+```html
+<button class="px-6 py-2 text-white rounded-lg transition-colors duration-200 flex items-center gap-2 btn-green-custom">
+  <tabler-icon name="device-floppy" class="w-4 h-4"></tabler-icon>
+  Save Data
+</button>
+```
+
+**Destructive Action Button (สีแดง outline):**
+```html
+<button class="px-6 py-2 rounded-lg transition-colors duration-200 flex items-center gap-2 btn-red-outline">
+  <tabler-icon name="trash" class="w-4 h-4"></tabler-icon>
+  Delete Data
+</button>
+```
+
+**Processing Action Button (สีม่วง):**
+```html
+<button class="px-6 py-2 text-white rounded-lg transition-colors duration-200 flex items-center gap-2 btn-purple-custom">
+  <tabler-icon name="download" class="w-4 h-4"></tabler-icon>
+  Export
 </button>
 ```
 
@@ -251,13 +288,59 @@ button tabler-icon {
 }
 ```
 
-### Color Palette
-- **Primary Blue**: #3B82F6 (bg-blue-500)
-- **Success Green**: #10B981 (bg-green-500)  
-- **Warning Yellow**: #F59E0B (bg-yellow-500)
-- **Danger Red**: #EF4444 (bg-red-500)
-- **Custom Purple**: #7E55D3 (mail button)
-- **Neutral Gray**: #6B7280 (bg-gray-600)
+### Custom Color Palette (Updated)
+
+The buttons now use custom colors that match the Thai color guide descriptions:
+
+- **สีน้ำเงิน (Primary Blue)**: #046DE0 - Main working color for "confirm" and "add data"
+- **สีเขียว (Success Green)**: #30BE82 - Success status for "confirm" or "successful" actions  
+- **สีแดง (Danger Red)**: #F45B69 - Destructive actions like "cancel", "reject", "delete"
+- **สีเหลือง (Warning Yellow)**: #FEB85B - Pending status like "waiting for approval"
+- **สีม่วง (Custom Purple)**: #7E55D3 - Processing actions and special features
+- **สีเทา (Neutral Gray)**: #6B7280 - Secondary actions and navigation
+
+### Custom CSS Classes
+
+```css
+/* Primary action buttons */
+.btn-blue-custom {
+  background-color: #046DE0 !important;
+  border-color: #046DE0 !important;
+}
+
+.btn-green-custom {
+  background-color: #30BE82 !important;
+  border-color: #30BE82 !important;
+}
+
+.btn-red-custom {
+  background-color: #F45B69 !important;
+  border-color: #F45B69 !important;
+}
+
+.btn-yellow-custom {
+  background-color: #FEB85B !important;
+  border-color: #FEB85B !important;
+}
+
+.btn-purple-custom {
+  background-color: #7E55D3 !important;
+  border-color: #7E55D3 !important;
+}
+
+/* Outline variants */
+.btn-blue-outline {
+  background-color: white !important;
+  border-color: #046DE0 !important;
+  color: #046DE0 !important;
+}
+
+.btn-red-outline {
+  background-color: white !important;
+  border-color: #F45B69 !important;
+  color: #F45B69 !important;
+}
+```
 
 ## 🔄 Branch Comparison
 

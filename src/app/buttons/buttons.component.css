@@ -13,6 +13,77 @@ button tabler-icon {
   flex-shrink: 0;
 }
 
+/* Custom color classes to match the color guide */
+.btn-blue-custom {
+  background-color: #046DE0 !important;
+  border-color: #046DE0 !important;
+}
+
+.btn-blue-custom:hover {
+  background-color: #0359c7 !important;
+  border-color: #0359c7 !important;
+}
+
+.btn-blue-outline {
+  background-color: white !important;
+  border-color: #046DE0 !important;
+  color: #046DE0 !important;
+}
+
+.btn-blue-outline:hover {
+  background-color: #f0f7ff !important;
+}
+
+.btn-green-custom {
+  background-color: #30BE82 !important;
+  border-color: #30BE82 !important;
+}
+
+.btn-green-custom:hover {
+  background-color: #28a071 !important;
+  border-color: #28a071 !important;
+}
+
+.btn-purple-custom {
+  background-color: #7E55D3 !important;
+  border-color: #7E55D3 !important;
+}
+
+.btn-purple-custom:hover {
+  background-color: #6b46c1 !important;
+  border-color: #6b46c1 !important;
+}
+
+.btn-red-custom {
+  background-color: #F45B69 !important;
+  border-color: #F45B69 !important;
+}
+
+.btn-red-custom:hover {
+  background-color: #e53e52 !important;
+  border-color: #e53e52 !important;
+}
+
+.btn-red-outline {
+  background-color: white !important;
+  border-color: #F45B69 !important;
+  color: #F45B69 !important;
+}
+
+.btn-red-outline:hover {
+  background-color: #fef2f2 !important;
+}
+
+.btn-yellow-custom {
+  background-color: #FEB85B !important;
+  border-color: #FEB85B !important;
+}
+
+.btn-yellow-custom:hover {
+  background-color: #f59e0b !important;
+  border-color: #f59e0b !important;
+}
+
 .mail-button {
   border-color: #7E55D3 !important;
   color: #7E55D3 !important;
