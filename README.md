@@ -63,12 +63,95 @@ A comprehensive collection of reusable button components built with Angular 18, 
 
 ## 📦 Dependencies
 
-### Core Dependencies
+### Angular 18 (Current)
 - `@angular/core`: ^18.0.0
 - `@angular/common`: ^18.0.0
 - `@angular/platform-browser`: ^18.0.0
 - `@tabler/icons`: ^3.34.1
 - `tailwindcss`: ^3.4.17
+- `typescript`: ~5.4.0
+
+### Angular 16 Compatibility
+
+#### ⚠️ Potential Issues with Angular 16:
+
+1. **Standalone Components**: 
+   - Angular 16 supports standalone components, but some features may differ
+   - May need to use `NgModule` approach instead
+
+2. **TypeScript Version**:
+   - Angular 16 uses TypeScript ~4.9.0
+   - Current project uses TypeScript ~5.4.0
+   - **Action Required**: Downgrade TypeScript version
+
+3. **Dependency Versions**:
+   - Need to downgrade Angular dependencies to v16.x
+   - Tailwind CSS 3.4.17 should work fine
+   - @tabler/icons is version-agnostic
+
+#### 🔧 Angular 16 Migration Steps:
+
+1. **Update package.json for Angular 16:**
+   ```json
+   {
+     "dependencies": {
+       "@angular/core": "^16.0.0",
+       "@angular/common": "^16.0.0", 
+       "@angular/platform-browser": "^16.0.0",
+       "@tabler/icons": "^3.34.1",
+       "tailwindcss": "^3.4.17"
+     },
+     "devDependencies": {
+       "@angular/cli": "^16.0.0",
+       "typescript": "~4.9.0"
+     }
+   }
+   ```
+
+2. **Component Modifications (if needed):**
+   ```typescript
+   // Angular 16 - Alternative NgModule approach
+   @NgModule({
+     declarations: [ButtonsComponent, TablerIconComponent],
+     imports: [CommonModule],
+     exports: [ButtonsComponent]
+   })
+   export class ButtonsModule { }
+   ```
+
+3. **Service Compatibility:**
+   - TablerIconService should work without changes
+   - DomSanitizer API is consistent across versions
+
+#### ✅ What Works in Angular 16:
+- ✅ Tailwind CSS integration
+- ✅ Custom icon service with SVG injection
+- ✅ All button styling and hover effects
+- ✅ TypeScript interfaces and types
+- ✅ Responsive design features
+
+#### ❌ What Might Need Changes:
+- ❌ Standalone component syntax (use NgModule instead)
+- ❌ TypeScript 5.4 features (downgrade to 4.9)
+- ❌ Latest Angular 18 APIs (use Angular 16 equivalents)
+
+#### 🚀 Quick Angular 16 Setup:
+
+```bash
+# 1. Create new Angular 16 project
+ng new angular-16-buttons --version=16
+cd angular-16-buttons
+
+# 2. Copy source files (except package.json)
+# Copy: src/app/, src/styles.css, tailwind.config.js
+
+# 3. Install dependencies
+npm install @tabler/icons tailwindcss
+
+# 4. Update angular.json for Tailwind
+# 5. Run the project
+ng serve
+```
 
 ### Development Dependencies
 - `@angular/cli`: ^18.0.0
@@ -281,6 +364,31 @@ ng build --prod
 - Firefox 88+
 - Safari 14+
 - Edge 90+
+
+## 🔄 Angular Version Compatibility
+
+### ✅ Fully Compatible
+- **Angular 18.x**: Current version, fully tested
+- **Angular 17.x**: Should work with minimal changes
+- **Angular 16.x**: Compatible with modifications (see Dependencies section)
+
+### ⚠️ Requires Modifications
+- **Angular 15.x**: Need to replace standalone components with NgModule
+- **Angular 14.x**: Major changes required for component structure
+- **Angular 13.x and below**: Significant refactoring needed
+
+### 📋 Compatibility Summary
+
+| Angular Version | Tabler Icons | Standalone Components | TypeScript | Status |
+|-----------------|--------------|----------------------|------------|--------|
+| 18.x | ✅ Full | ✅ Yes | 5.4+ | ✅ Supported |
+| 17.x | ✅ Full | ✅ Yes | 5.2+ | ✅ Supported |
+| 16.x | ✅ Full | ⚠️ Partial | 4.9+ | ⚠️ Needs Changes |
+| 15.x | ✅ Full | ❌ No | 4.8+ | ❌ Major Changes |
+| 14.x | ✅ Full | ❌ No | 4.7+ | ❌ Refactoring |
+| 13.x | ✅ Full | ❌ No | 4.4+ | ❌ Significant Work |
+
+**Recommendation**: Use Angular 16+ for best compatibility with minimal changes.
 
 ## 🤝 Contributing
 
